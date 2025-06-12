@@ -4,7 +4,7 @@ return {
     local mason_lsp_config = require "mason-lspconfig"
     mason_lsp_config.setup {
       ensure_installed = {
-	"jdtls", "lua_ls", "bashls"
+	"jdtls", "lua_ls",
       },
       automatic_installation = true,
     }
