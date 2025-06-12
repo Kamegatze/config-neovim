@@ -1,9 +1,9 @@
 return {
-    "nvim-treesitter/nvim-treesitter", 
-    branch = 'master', 
-    lazy = false, 
+    "nvim-treesitter/nvim-treesitter",
+    branch = 'master',
+    lazy = false,
     build = ":TSUpdate",
-    config = function() 
+    config = function()
         require('nvim-treesitter.configs').setup({
             additional_vim_regex_highlighting = false,
               ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "sql", "java", "rust", "go", "kotlin", "bash"},
