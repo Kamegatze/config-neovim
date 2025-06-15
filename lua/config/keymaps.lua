@@ -1,0 +1,24 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", {desc = "Remove search highlights"})
+
+vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move left!!!"<CR>')
+vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move right!!!"<CR>')
+vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move up!!!"<CR>')
+vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move down!!!"<CR>')
+vim.keymap.set("v", "<left>", '<cmd>echo "Use h to move left!!!"<CR>')
+vim.keymap.set("v", "<right>", '<cmd>echo "Use l to move right!!"<CR>')
+vim.keymap.set("v", "<up>", '<cmd>echo "Use k to move up!!!"<CR>')
+vim.keymap.set("v", "<down>", '<cmd>echo "Use j to move down!!!"<CR>')
+
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", {desc = "Move focus to the left window"})
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", {desc = "Move focus to the right window"})
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", {desc = "Move focus to the down window"})
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", {desc = "Move focus to the up window"})
+
+vim.keymap.set("n", "<leader>wv", ":vsplit<cr>", {desc = "[W]indwo split [V]ertical"})
+vim.keymap.set("n", "<leader>wh", ":split<cr>", {desc = "[W]indwo split [H]orizontal"})
+
+vim.keymap.set("v", "<", "<gv", {desc = "Indent left in visual mode"})
+vim.keymap.set("v", ">", ">gv", {desc = "Indent right in visual mode"})

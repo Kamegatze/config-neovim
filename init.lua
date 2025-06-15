@@ -1,4 +1,2 @@
---Basic
-require('core.lazy')
-require('core.mappings')
-require('core.nvim-config')
+require("config.options")
+require("config.keymaps")
