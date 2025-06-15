@@ -22,3 +22,7 @@ vim.keymap.set("n", "<leader>wh", ":split<cr>", {desc = "[W]indwo split [H]orizo
 
 vim.keymap.set("v", "<", "<gv", {desc = "Indent left in visual mode"})
 vim.keymap.set("v", ">", ">gv", {desc = "Indent right in visual mode"})
+
+-- NeoTree
+vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>')
+vim.keymap.set('n', '<leader>o', ':Neotree focus git_status<CR>')
