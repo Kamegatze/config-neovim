@@ -1,4 +1,2 @@
---Basic
-require('core.lazy')
-require('core.mappings')
-require('core.nvim-config')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
