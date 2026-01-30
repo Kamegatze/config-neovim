@@ -1,6 +1,6 @@
 return {
   "nvim-java/nvim-java",
-  dependencies = { "folke/which-key.nvim" },
+  dependencies = { "folke/which-key.nvim", "neovim/nvim-lspconfig" },
   config = function()
     require("java").setup()
     vim.lsp.config("jdtls", {
@@ -18,7 +18,14 @@ return {
               {
                 name = "JavaSE-21",
                 path = os.getenv("HOME") .. ".sdkman/candidates/java/21.0.9-zulu",
-                default = true,
+              },
+              {
+                name = "JavaSE-17",
+                path = os.getenv("HOME") .. ".sdkman/candidates/java/17.0.17-zulu",
+              },
+              {
+                name = "JavaSE-11",
+                path = os.getenv("HOME") .. ".sdkman/candidates/java/11.0.29-zulu",
               },
             },
           },
