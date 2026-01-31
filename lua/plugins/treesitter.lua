@@ -1,4 +1,4 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = { ensure_installed = { "rust", "ron" } },
+  opts = { ensure_installed = { "rust", "ron", "lua" } },
 }
