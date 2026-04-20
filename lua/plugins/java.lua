@@ -1,37 +1,16 @@
 return {
-  "nvim-java/nvim-java",
-  dependencies = { "folke/which-key.nvim", "neovim/nvim-lspconfig" },
-  config = function()
-    require("java").setup()
-    vim.lsp.config("jdtls", {
-      settings = {
-        java = {
-          format = {
-            enabled = true,
-            settings = {
-              url = "/home/kamegatze/code/formatting/logistic_esb.xml",
-              profile = "logistic-esb",
-            },
-          },
-          configuration = {
-            runtimes = {
-              {
-                name = "JavaSE-21",
-                path = os.getenv("HOME") .. ".sdkman/candidates/java/21.0.9-zulu",
-              },
-              {
-                name = "JavaSE-17",
-                path = os.getenv("HOME") .. ".sdkman/candidates/java/17.0.17-zulu",
-              },
-              {
-                name = "JavaSE-11",
-                path = os.getenv("HOME") .. ".sdkman/candidates/java/11.0.29-zulu",
-              },
-            },
-          },
-        },
+  {
+    "alessio-vivaldelli/java-creator-nvim",
+    ft = "java",
+    opts = {
+      -- Default configuration
+      keymaps = {
+        java_new = "<leader>jn",
       },
-    })
-    vim.lsp.enable("jdtls")
-  end,
+      options = {
+        auto_open = true, -- Open file after creation
+        java_version = 21, -- Minimum Java version
+      },
+    },
+  },
 }

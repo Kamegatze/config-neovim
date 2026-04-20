@@ -1,3 +1,5 @@
+local path_checkstyle_file = vim.fn.getcwd() .. "/config/checkstyle.xml"
+
 return {
   "stevearc/conform.nvim",
   enabled = true,
@@ -10,12 +12,26 @@ return {
         quiet = false, -- not recommended to change
         lsp_format = "fallback", -- not recommended to change
       },
-      formatters_by_ft = {
-        lua = { "stylua" },
-        fish = { "fish_indent" },
-        sh = { "shfmt" },
-        json = { "jq" },
-      },
+      formatters_by_ft = (function()
+        if require("config.utils").file_exists(path_checkstyle_file) then
+          return {
+            lua = { "stylua" },
+            fish = { "fish_indent" },
+            sh = { "shfmt" },
+            json = { "jq" },
+            xml = { "xmlformatter" },
+          }
+        else
+          return {
+            lua = { "stylua" },
+            fish = { "fish_indent" },
+            sh = { "shfmt" },
+            json = { "jq" },
+            xml = { "xmlformatter" },
+            java = { "google-java-format" },
+          }
+        end
+      end)(),
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
